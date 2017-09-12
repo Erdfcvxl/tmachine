@@ -1,0 +1,36 @@
+.primary-grid {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: auto;
+  grid-template-areas: "head history" "line history" "orders history" "run-button history" "output history";
+}
+
+.primary-grid--head-input {
+  background-color: antiquewhite;
+  grid-area: head;
+}
+
+.primary-grid--line-input {
+  background-color: aquamarine;
+  grid-area: line;
+}
+
+.primary-grid--orders-input {
+  background-color: bisque;
+  grid-area: orders;
+}
+
+.primary-grid--proceed-button {
+  background-color: blueviolet;
+  grid-area: run-button;
+}
+
+.primary-grid--output {
+  background-color: cadetblue;
+  grid-area: output;
+}
+
+.primary-grid--history {
+  background-color: darkgrey;
+  grid-area: history;
+}

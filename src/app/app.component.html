@@ -1,0 +1,20 @@
+<script src="services/turing.ts"></script>
+<div class="primary-grid">
+    <div class="primary-grid--head-input">
+        <input type="text" [(ngModel)]="_headPosition" name="head-input">
+    </div>
+    <div class="primary-grid--line-input">
+        <input type="text" [(ngModel)]="_lineInput" name="line-input">
+    </div>
+    <div class="primary-grid--orders-input">
+        <textarea name="orders-input" [(ngModel)]="_orders">{{ _orders}}</textarea>
+    </div>
+    <div class="primary-grid--proceed-button">
+        <button type="submit" (click)="proceed()">Proceed</button>
+        <button type="submit" (click)="populateDummy()">Populate</button>
+    </div>
+    <div class="primary-grid--output">
+        {{ _headPosition }}
+    </div>
+    <div class="primary-grid--history"></div>
+</div>
