@@ -1,7 +1,20 @@
+@color-0: #709a6a;
+@color-2: #62895c;
+@color-3: #4d6d48;
+@color-4: #3f5c3b;
+@color-5: #364f32;
+
 .primary-grid {
+  max-width: 1024px;
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: @color-2;
+
   display: grid;
   grid-template-columns: 2fr 3fr;
-  grid-template-rows: auto;
+  grid-template-rows: auto auto auto auto 1fr;
 
   grid-template-areas:
           "head history"
@@ -10,30 +23,59 @@
           "run-button history"
           "output history";
 
+  .primary-grid--head-input,
+  .primary-grid--line-input,
+  .primary-grid--orders-input,
+  .primary-grid--proceed-button {
+    transition: all .3s ease;
+  }
+
   &--head-input {
-    background-color: antiquewhite;
     grid-area: head;
+    padding: 10px;
   }
   &--line-input {
-    background-color: aquamarine;
     grid-area: line;
+    padding: 10px;
   }
   &--orders-input {
-    background-color: bisque;
     grid-area: orders;
+    padding: 10px;
   }
   &--proceed-button {
-    background-color: blueviolet;
     grid-area: run-button;
+    padding: 10px;
   }
 
   &--output {
-    background-color: cadetblue;
     grid-area: output;
   }
   &--history {
-    background-color: darkgrey;
     grid-area: history;
+
+    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    opacity: 0;
+  }
+
+  &---proccess {
+    .primary-grid--head-input,
+    .primary-grid--line-input,
+    .primary-grid--orders-input,
+    .primary-grid--proceed-button {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0;
+      opacity: 0;
+    }
+
+    .primary-grid--history {
+      max-height: calc(~'100vh - 80px');
+      overflow-y: scroll;
+      opacity: 1;
+    }
   }
 }
 

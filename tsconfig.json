@@ -15,5 +15,9 @@
       "es2017",
       "dom"
     ]
-  }
+  },
+  "filesGlob": [
+    "./typings/**/*.ts",
+    "./src/client/**/*.ts"
+  ]
 }

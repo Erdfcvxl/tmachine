@@ -1,3 +1,103 @@
 body {
-  background-color: aliceblue;
+  background-color: #709a6a;
+  margin: 0;
+  padding: 0;
+  color: #364f32;
+  padding: 20px 0;
+}
+* * {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+input,
+textarea {
+  border: none;
+  background-color: #4d6d48;
+  width: 100%;
+  border-left: 2px solid #3f5c3b;
+  padding: 2px 10px;
+  height: 30px;
+}
+textarea {
+  min-height: 20vh;
+}
+button {
+  color: #709a6a;
+  border: 1px solid #3f5c3b;
+  background-color: #4d6d48;
+  cursor: pointer;
+  height: 30px;
+  min-width: 100px;
+}
+button:hover {
+  color: #709a6a;
+  background-color: #3f5c3b;
+}
+.expand-button {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  width: 50px;
+  min-width: 50px;
+  padding: 0;
+}
+.primary-grid {
+  max-width: 1024px;
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #62895c;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: auto auto auto auto 1fr;
+  grid-template-areas: "head history" "line history" "orders history" "run-button history" "output history";
+}
+.primary-grid .primary-grid--head-input,
+.primary-grid .primary-grid--line-input,
+.primary-grid .primary-grid--orders-input,
+.primary-grid .primary-grid--proceed-button {
+  transition: all .3s ease;
+}
+.primary-grid--head-input {
+  grid-area: head;
+  padding: 10px;
+}
+.primary-grid--line-input {
+  grid-area: line;
+  padding: 10px;
+}
+.primary-grid--orders-input {
+  grid-area: orders;
+  padding: 10px;
+}
+.primary-grid--proceed-button {
+  grid-area: run-button;
+  padding: 10px;
+}
+.primary-grid--output {
+  grid-area: output;
+}
+.primary-grid--history {
+  grid-area: history;
+  text-align: center;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  opacity: 0;
+}
+.primary-grid---proccess .primary-grid--head-input,
+.primary-grid---proccess .primary-grid--line-input,
+.primary-grid---proccess .primary-grid--orders-input,
+.primary-grid---proccess .primary-grid--proceed-button {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  opacity: 0;
+}
+.primary-grid---proccess .primary-grid--history {
+  max-height: calc(100vh - 80px);
+  overflow-y: scroll;
+  opacity: 1;
 }
