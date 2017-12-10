@@ -3,16 +3,21 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 
 import {AppComponent} from './app.component';
+import {TuringComponent} from './turing/turing.component';
+import {TuringService} from './turing/turing.service';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        TuringComponent
     ],
     imports: [
         BrowserModule,
         FormsModule
     ],
-    providers: [],
+    providers: [
+        TuringService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,0 +1,16 @@
+<hr>
+
+<div *ngIf="showInput; else showData">
+    <input type="file" (change)="readFile($event)">
+</div>
+
+<ng-template #showData>
+    <b>File name:</b> {{ fileName }} <br>
+    <b>Line:</b> {{ line }}
+
+    <div *ngIf="done">
+        DONE!
+    </div>
+</ng-template>
+
+<hr>
